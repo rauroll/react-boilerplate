@@ -4,10 +4,10 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './client/app'
+    './app/app'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist/static'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
@@ -19,6 +19,7 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
       compressor: {
         warnings: false
       }
